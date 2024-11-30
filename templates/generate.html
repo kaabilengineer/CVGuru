@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Resume Using AI</title>
+    <style>
+        /* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #050016;
+  color: #ffffff;
+}
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+
+header {
+  background-color: #0b0022;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.profile-options {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.switch-btn,
+.join-btn {
+  background-color: transparent;
+  border: 1px solid #5a5a5a;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-icon img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Container */
+.container {
+  width: 60%;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #0b0022;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+/* Header */
+h1 {
+  font-size: 2.5rem;
+  color: #7d7aff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 5px;
+}
+
+/* Label Styling */
+label {
+  display: block;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #b5b5b5;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #5a5a5a;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+  color: #b0b0b0;
+}
+
+/* Dynamic Section Buttons */
+.add-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #7d7aff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.add-button:hover {
+  background-color: #5a5acd;
+}
+
+/* Dynamic Section Styling */
+.dynamic-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Item Styling */
+.form-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #2e2e2e;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form-item label {
+  font-size: 0.9rem;
+}
+
+/* Generate Resume Button */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 15px 30px;
+  background-color: #7d7aff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ /* Content Container */
+ #content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            width: 60%;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #content-container h1 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        #content-container ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        #content-container li {
+            background-color: #0b0022;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            color: #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+
+.button:hover {
+  background-color: #5a5acd;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: #b5b5b5;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #7d7aff;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+footer a:last-child {
+  margin-right: 0; /* Removes the margin from the last link */
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer p:last-child {
+  margin-top: 20px; /* Adds some space before the copyright */
+}
+
+    </style>
+</head>
+<body>
+  <header>
+    <div class="container2">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Spectram Logo"> <!-- Logo -->
+            <span>CVGuru.AI</span>
+        </div>
+        
+        <div class="profile-options">
+            <a href="#contact">
+                <button href="/" class="join-btn">Home</button>
+            </a>
+        </div>
+    </div>
+</header>
+  <div class="container">
+      <h1>Generate Resume Using AI</h1>
+
+      <form method="POST" action="/generatepdf">
+          <!-- Personal Information -->
+          <h2>Personal Information</h2>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="linkedin">LinkedIn</label>
+          <input type="text" id="linkedin" name="linkedin">
+
+          <label for="contact">Contact No</label>
+          <input type="text" id="contact" name="contact" required>
+
+          <!-- Experience Section -->
+          <div class="dynamic-section">
+              <h2>Experience</h2>
+              <div id="experience-section"></div>
+              <button type="button" class="add-button" onclick="addExperience()">Add Experience</button>
+          </div>
+
+          <!-- Projects Section -->
+          <div class="dynamic-section">
+              <h2>Projects</h2>
+              <div id="projects-section"></div>
+              <button type="button" class="add-button" onclick="addProject()">Add Project</button>
+          </div>
+
+          <!-- Education Section -->
+          <div class="dynamic-section">
+              <h2>Education</h2>
+              <div id="education-section"></div>
+              <button type="button" class="add-button" onclick="addEducation()">Add Education</button>
+          </div>
+
+          <!-- Certifications & Participation -->
+          <div class="dynamic-section">
+              <h2>Certifications and Participation</h2>
+              <div id="certifications-section"></div>
+              <button type="button" class="add-button" onclick="addCertification()">Add Certification/Participation</button>
+          </div>
+          <div class="button-container">
+            <button type="submit" class="button" formaction="/aienhancement">AI Enhancement</button>
+
+        </div>
+      
+        
+          <!-- Generate Resume Button -->
+          <div class="button-container">
+              <button type="submit" class="button">Generate Resume</button>
+          </div>
+      </form>
+  </div>
+  <footer id="contact">
+    <p>For more queries, contact <a href="mailto:atharva@gmail.com">atharvapatil2222@gmail.com</a></p>
+    <p>
+        <a href="{{ url_for('static', filename='html/conditions-of-use.html') }}" style="color: #7d7aff; text-decoration: none; margin-right: 15px;">Conditions of Use</a>
+        <a href="{{ url_for('static', filename='html/privacy-notice.html') }}" style="color: #7d7aff; text-decoration: none; margin-right: 15px;">Privacy Notice</a>
+        <a href="{{ url_for('static', filename='html/terms-and-conditions.html') }}" style="color: #7d7aff; text-decoration: none;">Terms and Conditions</a>
+    </p>
+    <p>&copy; 2024</p>
+</footer>
+  <script>
+      function addExperience() {
+          const experienceSection = document.getElementById("experience-section");
+          const experienceDiv = document.createElement("div");
+          experienceDiv.classList.add("form-item");
+
+          experienceDiv.innerHTML = `
+              <label>Company Name</label>
+              <input type="text" name="experience_company[]" required>
+              <label>Role</label>
+              <input type="text" name="experience_role[]" required>
+              <label>Key Point 1</label>
+              <input type="text" name="experience_keypoint1[]">
+              <label>Key Point 2</label>
+              <input type="text" name="experience_keypoint2[]">
+              <label>Key Point 3</label>
+              <input type="text" name="experience_keypoint3[]">
+          `;
+          experienceSection.appendChild(experienceDiv);
+      }
+
+      function addProject() {
+          const projectSection = document.getElementById("projects-section");
+          const projectDiv = document.createElement("div");
+          projectDiv.classList.add("form-item");
+
+          projectDiv.innerHTML = `
+              <label>Project Name</label>
+              <input type="text" name="project_name[]" required>
+              <label>Key Point 1</label>
+              <input type="text" name="project_keypoint1[]">
+              <label>Key Point 2</label>
+              <input type="text" name="project_keypoint2[]">
+              <label>Key Point 3</label>
+              <input type="text" name="project_keypoint3[]">
+          `;
+          projectSection.appendChild(projectDiv);
+      }
+
+      function addEducation() {
+          const educationSection = document.getElementById("education-section");
+          const educationDiv = document.createElement("div");
+          educationDiv.classList.add("form-item");
+
+          educationDiv.innerHTML = `
+              <label>College Name</label>
+              <input type="text" name="education_college[]" required>
+              <label>Degree</label>
+              <input type="text" name="education_degree[]" required>
+              <label>Percentage</label>
+              <input type="text" name="education_percentage[]" required>
+          `;
+          educationSection.appendChild(educationDiv);
+      }
+
+      function addCertification() {
+          const certificationsSection = document.getElementById("certifications-section");
+          const certificationDiv = document.createElement("div");
+          certificationDiv.classList.add("form-item");
+
+          certificationDiv.innerHTML = `
+              <label>Certification/Participation</label>
+              <input type="text" name="certification_name[]" required>
+          `;
+          certificationsSection.appendChild(certificationDiv);
+      }
+     
+     
+    
+  </script>
+</body>
+</html>

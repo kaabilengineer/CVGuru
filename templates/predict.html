@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Page</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/predict.css') }}">
+  <style>
+    
+
+footer a {
+  color: #7d7aff;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+footer a:last-child {
+  margin-right: 0; /* Removes the margin from the last link */
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer p:last-child {
+  margin-top: 20px; /* Adds some space before the copyright */
+}
+  </style>
+   <header>
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Spectram Logo"> <!-- Logo -->
+            <span>CVGuru.AI</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="#roadmap">Learn</a></li>
+                <li><a href="#models">Models</a></li>
+            </ul>
+        </nav>
+        <div class="profile-options">
+            <a href="#contact">
+                <button class="join-btn">Contact</button>
+            </a>
+        </div>
+    </div>
+</header>
+</head>
+<body>
+ 
+  
+  <div id="text-container" class="centered-text">
+    <p>Upload your Document in PDF file and let the magic happen. You will get some questions based on your Document.</p>
+  </div>
+  <form id="upload-section" action="/test_generate" method="post" enctype="multipart/form-data">
+    <label for="job_title">Job you are applying for:</label>
+    <input type="text" name="job_title" id="job-title" required>
+    
+    <input class="uploadbutton" type="file" name="pdf_file" id="pdf-upload" accept=".pdf">
+    <input type="submit" class="uploadbutton" id="submit-button" value="Generate">
+  </form>
+
+  <div id="loading-message">Loading, please wait...</div>
+
+  <div id="chat-section" class="container">
+    <div class="question">
+        <ul>
+          {% if cresults %}
+            {% for question in cresults %}
+              <li>{{ question }}</li>
+            {% endfor %}
+          {% else %}
+            <p>No questions generated.</p>
+          {% endif %}
+        </ul>
+    </div>
+  </div>
+  <footer id="contact">
+    <p>For more queries, contact <a href="mailto:atharva@gmail.com">atharvapatil2222@gmail.com</a></p>
+    <p>
+        <a href="{{ url_for('static', filename='html/conditions-of-use.html') }}" style="color: #7d7aff; text-decoration: none; margin-right: 15px;">Conditions of Use</a>
+        <a href="{{ url_for('static', filename='html/privacy-notice.html') }}" style="color: #7d7aff; text-decoration: none; margin-right: 15px;">Privacy Notice</a>
+        <a href="{{ url_for('static', filename='html/terms-and-conditions.html') }}" style="color: #7d7aff; text-decoration: none;">Terms and Conditions</a>
+    </p>
+    <p>&copy; 2024</p>
+</footer>
+
+  <!-- JavaScript for Drag-and-Drop Handling (if needed) -->
+  <script>
+    function dragOverHandler(event) {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'copy';
+    }
+
+    function dropHandler(event) {
+      event.preventDefault();
+      const files = event.dataTransfer.files;
+      handleFiles(files);
+    }
+
+    function handleFiles(files) {
+      const uploadSection = document.getElementById('upload-section');
+      const fileNames = Array.from(files).map(file => file.name).join(', ');
+      uploadSection.innerHTML = `<h2>Uploaded Files</h2><p>${fileNames}</p>`;
+    }
+
+    function showLoadingMessage() {
+      document.getElementById('loading-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

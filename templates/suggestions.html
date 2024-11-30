@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Enhancement Suggestions</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #050016;
+            color: #ffffff;
+        }
+
+        /* Content Container */
+        #content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            width: 60%;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #content-container h1 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        #content-container ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        #content-container li {
+            background-color: #0b0022;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            color: #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #7d7aff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #5a5acd;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #b5b5b5;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #7d7aff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="content-container">
+        <h1>AI Enhancement Suggestions</h1>
+
+        {% if suggestions %}
+        <ul>
+            {% for suggestion in suggestions %}
+                <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No suggestions available at the moment.</p>
+        {% endif %}
+
+    </div>
+
+    <footer id="contact">
+        <p>For more queries, contact <a href="mailto:atharva@gmail.com">atharvapatil2222@gmail.com</a></p>
+        <p>
+            <a href="{{ url_for('static', filename='html/conditions-of-use.html') }}" style="color: #7d7aff; text-decoration: none; margin-right: 15px;">Conditions of Use</a>
+            <a href="{{ url_for('static', filename='html/privacy-notice.html') }}" style="color: #7d7aff; text-decoration: none; margin-right: 15px;">Privacy Notice</a>
+            <a href="{{ url_for('static', filename='html/terms-and-conditions.html') }}" style="color: #7d7aff; text-decoration: none;">Terms and Conditions</a>
+        </p>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>

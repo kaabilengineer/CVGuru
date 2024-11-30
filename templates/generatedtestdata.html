@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Test Questions</title>
+    <!-- Include any CSS styles you use in predict.html -->
+    <link rel="stylesheet" type="text/css" href="your-css-file.css">
+</head>
+<body>
+    <header>
+        <h1>Generated Test Questions</h1>
+    </header>
+    
+    <main>
+        <!-- Add a container for displaying the generated test questions -->
+        <div class="container">
+            {% for question in cresults %}
+                <div class="question">
+                    <p>{{ question }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+    <footer>
+        <!-- Add any footer content if necessary -->
+    </footer>
+</body>
+</html>

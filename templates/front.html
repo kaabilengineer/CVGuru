@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVGuru.AI - AI Tools for Resume Growth</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/front.css') }}">
+</head>
+
+<body onload="scrollToTop()">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Spectram Logo"> <!-- Logo -->
+                <span>CVGuru.AI</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="#roadmap">Learn</a></li>
+                    <li><a href="#models">Models</a></li>
+                </ul>
+            </nav>
+            <div class="profile-options">
+                <a href="#contact">
+                    <button class="join-btn">Contact</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Unlock the Power of AI using<br> <span>CVGuru.AI - AI Tools for Resume</span></h1>
+            <p>Dive deep into strategies that enhance your interview skills, resume score, and maximize returns in every job role you will apply.</p>
+            <div class="cta-buttons">
+                <a href="#roadmap">
+                    <button class="primary-btn">Start now!</button>
+                </a>
+                <a href="#models">
+                    <button class="secondary-btn">Try Resume models</button>
+                </a>
+            </div>
+            <p class="demo-text">Try our ML Models now! – <a href="#models">Learn more</a></p>
+        </section>
+
+        <!-- Image Section --> 
+        <section class="image-section">
+            <img src="{{ url_for('static', filename='images/Dashboardfront.png') }}" alt="Centered Image"> <!-- Dashboard Image -->
+        </section>
+
+        <section id="models" class="models">
+            <h1>Explore our ML Models</h1>
+            <p>These ML models can be used for generating interview questions and building your resume</p>
+            
+                
+            <div class="models-container">
+                <!-- Card 1: Generate Resume Using AI -->
+                <a href="/generate" class="model-card">
+                    <img src="{{ url_for('static', filename='images/model2.png') }}" alt="Generate Resume Image">
+                    <div class="model-name">Generate Resume Using AI</div>
+                </a>
+                
+                <!-- Card 2: Generate Interview Questions -->
+                <a href="/predict" class="model-card">
+                    <img src="{{ url_for('static', filename='images/model1.png') }}" alt="Generate Interview Questions Image">
+                    <div class="model-name">Generate Interview Questions</div>
+                </a>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <p>For more queries, contact <a href="mailto:atharva@gmail.com">atharvapatil2222@gmail.com</a></p>
+            <p>
+                <a href="{{ url_for('static', filename='html/conditions-of-use.html') }}" style="color: #7d7aff; text-decoration: none; margin-right: 15px;">Conditions of Use</a>
+                <a href="{{ url_for('static', filename='html/privacy-notice.html') }}" style="color: #7d7aff; text-decoration: none; margin-right: 15px;">Privacy Notice</a>
+                <a href="{{ url_for('static', filename='html/terms-and-conditions.html') }}" style="color: #7d7aff; text-decoration: none;">Terms and Conditions</a>
+            </p>
+            <p>&copy; 2024</p>
+        </footer>
+    </main>
+
+    <!-- JavaScript to scroll to top on page load -->
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

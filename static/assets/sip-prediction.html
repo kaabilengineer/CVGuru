@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Predictions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #050016;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        .container {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #7d7aff;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #b5b5b5;
+        }
+        .download-btn {
+            background-color: #7d7aff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #7d7aff;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        .form-group button {
+            background-color: #7d7aff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #7d7aff;
+    background-color: #1a1a1a;
+    color: #fff;
+    height: 150px;
+    overflow-y: scroll;
+}
+
+form select option {
+    padding: 5px;
+    background-color: #1a1a1a;
+}
+
+form select option:hover {
+    background-color: #7d7aff;
+    color: #fff;
+}
+.stock-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    border: 1px solid #7d7aff;
+}
+
+.stock-selection-grid label {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.stock-selection-grid input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.stock-selection-grid input[type="checkbox"]:checked + label {
+    background-color: #7d7aff;
+    color: #fff;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SIP Predictions</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Description</h2>
+            <p>
+                The Systematic Investment Plan (SIP) Prediction tool is designed to help you forecast the potential growth of your investments through SIPs. SIPs are a popular way to invest in mutual funds by regularly investing a fixed amount, allowing you to benefit from the power of compounding over time.
+            </p>
+            <p>
+                This tool leverages machine learning algorithms to predict the future value of your investments based on various factors such as the investment period, expected rate of return, and the amount invested.
+            </p>
+        </section>
+
+        <section>
+            <h2>Download SIP Prediction Model</h2>
+            <a href="sip-prediction-model.zip" class="download-btn">Download File</a>
+        </section>
+
+        <section>
+            <h2>How To Use</h2>
+            <form>
+                <div class="form-group">
+                    <label for="investment-amount">Investment Amount (INR):</label>
+                    <input type="number" id="investment-amount" name="investment-amount" placeholder="Enter amount to invest per month" required>
+                </div>
+                <div class="form-group">
+                    <label for="investment-period">Investment Period (Years):</label>
+                    <input type="number" id="investment-period" name="investment-period" placeholder="Enter the number of years" required>
+                </div>
+                <div class="form-group">
+                    <label>Select Stocks (Up to 50):</label>
+                    <div class="stock-selection-grid">
+                        <label>
+                            <input type="checkbox" name="stocks" value="stock1"> Stock 1
+                        </label>
+                        <label>
+                            <input type="checkbox" name="stocks" value="stock2"> Stock 2
+                        </label>
+                        <label>
+                            <input type="checkbox" name="stocks" value="stock3"> Stock 3
+                        </label>
+                        <label>
+                            <input type="checkbox" name="stocks" value="stock4"> Stock 4
+                        </label>
+                        <label>
+                            <input type="checkbox" name="stocks" value="stock5"> Stock 5
+                        </label>
+                        <!-- Add more stock options as needed -->
+                    </div>
+                    <small>Select up to 50 stocks by ticking the checkboxes.</small>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Predict Future Value</button>
+                </div>
+            </form>
+        </section>
+        
+
+
+        
+
+        <section>
+            <h2>How it is Trained</h2>
+            <p>
+                The SIP Prediction model is trained using historical financial data and advanced machine learning algorithms. We utilize a dataset that includes various economic factors, market conditions, and past performance of mutual funds.
+            </p>
+            <p>
+                The model is developed using supervised learning techniques where it is trained on labeled data, learning to predict the future value of SIP investments based on different inputs. The model's accuracy is continuously improved through validation and testing against unseen data, ensuring reliable predictions.
+            </p>
+        </section>
+        <!-- Initialize Select2 -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const checkboxes = document.querySelectorAll('input[name="stocks"]');
+                let checkedCount = 0;
+        
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', function () {
+                        checkedCount = document.querySelectorAll('input[name="stocks"]:checked').length;
+                        if (checkedCount > 50) {
+                            alert("You can select up to 50 stocks only.");
+                            checkbox.checked = false;
+                        }
+                    });
+                });
+            });
+        </script>
+        
+    </div>
+</body>
+</html>
